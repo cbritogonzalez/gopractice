@@ -61,5 +61,5 @@ func main() {
 	age := 18
 	fmt.Println(yearsUntilEvents(age))
 
-	// named return values 1:06:27
+	// named return values 1:15:00
 }
