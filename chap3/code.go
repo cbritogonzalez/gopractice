@@ -22,6 +22,32 @@ func getNames() (string, string) { // multiple returning values, wrap
 	return "John", "Doe"
 }
 
+// func getCoords() (x, y int) { // naked return statements, returns x, y
+// 	return
+// }
+
+// func getCoords() (int, int){
+// 	var x int
+// 	var y int
+// 	return x,y
+// }
+
+func yearsUntilEvents(age int) (yearsUntilAdult int, yearsUntilDrinking int, yearsUntilCarRental int) { // implicit return, could be explicit if we put the three variables in order in the return like python
+	yearsUntilAdult = 18 - age
+	if yearsUntilAdult < 0 {
+		yearsUntilAdult = 0
+	}
+	yearsUntilDrinking = 21 - age
+	if yearsUntilDrinking < 0 {
+		yearsUntilDrinking = 0
+	}
+	yearsUntilCarRental = 25 - age
+	if yearsUntilCarRental < 0 {
+		yearsUntilCarRental = 0
+	}
+	return
+}
+
 func main() {
 	fmt.Println(concat("1", "2"))
 	// in go we pass variables by value, not by reference except for a few data types not yet seen
@@ -31,5 +57,9 @@ func main() {
 
 	s1, _ := getNames() // ignore return value, the compiler will remove this from our code, useful since we cannot have any unused variables
 	fmt.Println(s1)
+	// named return values
+	age := 18
+	fmt.Println(yearsUntilEvents(age))
+
 	// named return values 1:06:27
 }
